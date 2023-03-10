@@ -1,0 +1,69 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    @apply bg-slate-500
+}
+
+.navigation {
+    @apply bg-blue-400 fixed min-w-full shadow-xl flex gap-4 text-lg text-white;
+}
+
+.container {
+    @apply flex flex-col justify-center items-center min-w-full min-h-screen;
+}
+
+.link {
+    @apply flex flex-1 justify-center min-h-full hover:bg-blue-500;
+}
+
+.link > a {
+    @apply min-w-full py-2 text-center;
+}
+
+.player {
+    @apply relative min-h-full sm:w-1/2;
+}
+
+.player>video {
+    @apply box-border relative min-h-fit sm:w-full border-4 border-blue-400 hover:border-blue-500 rounded-md;
+}
+
+.controls {
+    @apply absolute bottom-0 left-0 right-0 z-50 bg-gradient-to-b from-transparent to-blue-400 py-4 w-full rounded-md flex flex-nowrap justify-between items-center text-white opacity-0 transition-all ease-in-out;
+}
+
+.player:hover>.controls, .paused>.controls {
+    @apply opacity-100
+}
+
+.volumeAppear {
+    @apply w-0 opacity-0 transition-all duration-150;
+}
+
+.volume:hover>.volumeAppear {
+    @apply w-16 opacity-100;
+}
+
+.extras {
+    @apply bg-blue-500 rounded-3xl my-2 w-1/2 flex justify-between items-center;
+}
+
+.timeline {
+    @apply my-1 w-full sm:w-1/2 h-2 z-50 rounded-full bg-gray-400 cursor-pointer flex items-center transition-all;
+}
+
+.timeline-thumb {
+    @apply w-2 h-2 bg-red-600 rounded-full cursor-pointer transition-all;
+}
+
+.timeline:hover {
+    @apply h-4;
+}
+
+.timeline:hover:hover>.timeline-thumb {
+    @apply w-4 h-4;
+}
